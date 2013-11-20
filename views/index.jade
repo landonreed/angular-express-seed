@@ -1,67 +1,37 @@
 extends layout
 
 block body
-  nav.navbar.navbar-default(role='navigation')
-    .navbar-header(ng-controller='AppCtrl')
-      button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
-        span.sr-only Toggle navigation
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      a.navbar-brand(href='#') Hello {{name}}
-    // Collect the nav links, forms, and other content for toggling
-    #bs-example-navbar-collapse-1.collapse.navbar-collapse
-      ul.nav.navbar-nav.menu
-        li.active
-          a(href='view1') view1
-        li
-          a(href='view2') view2
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown')
-            | Dropdown
-            b.caret
-          ul.dropdown-menu
-            li
-              a(href='#') Action
-            li
-              a(href='#') Another action
-            li
-              a(href='#') Something else here
-            li.divider
-            li
-              a(href='#') Separated link
-            li.divider
-            li
-              a(href='#') One more separated link
-      form.navbar-form.navbar-left(role='search')
-        .form-group
-          input.form-control(type='text', placeholder='Search')
-        button.btn.btn-default(type='submit') Submit
-      ul.nav.navbar-nav.navbar-right
-        li
-          a(href='#') Link
-        li.dropdown
-          a.dropdown-toggle(href='#', data-toggle='dropdown')
-            | Dropdown
-            b.caret
-          ul.dropdown-menu
-            li
-              a(href='#') Action
-            li
-              a(href='#') Another action
-            li
-              a(href='#') Something else here
-            li.divider
-            li
-              a(href='#') Separated link
-  //- div.page-header
-  //-   h1 Plan-It Lite
-  div
-    div(ng-view)
+  #wrap
+    nav.navbar.navbar-default(role='navigation')
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.navbar-brand(href='#') Plan-Git
+      // Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.menu
+          li(ng-class="{ active: isActive('/about')}")
+            a(href='about') About
+          li(ng-class="{ active: isActive('/data')}")
+            a(href='data') Data
+        form.navbar-form.navbar-left(role='search')
+          .form-group
+            input.form-control(type='text', placeholder='Search')
+          button.btn.btn-default(type='submit') Submit
+        ul.nav.navbar-nav.navbar-right
+          li
+            a(href='#') Link
+    div
+      div(ng-view)
 
-    div.row
-      div
-      .col-md-12
+  #footer(ng-controller='AppCtrl')
+    div.container
+      p.text-muted.credit Developed at 
+        a(href='http://atlantaregional.com') ARC
+        | &nbsp;&nbsp;|&nbsp;
         | Angular seed app: v
         span(app-version)
 
