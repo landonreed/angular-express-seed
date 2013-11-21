@@ -10,13 +10,25 @@ angular.module('myApp', [
 ]).
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
+    when('/', {
+      templateUrl: 'partials/index',
+      controller: 'IndexCtrl'
+    }).
     when('/about', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
+      templateUrl: 'partials/about',
+      controller: 'AboutCtrl'
     }).
     when('/data', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
+      templateUrl: 'partials/data',
+      controller: 'DataCtrl'
+    }).
+    when('/details', {
+      templateUrl: 'partials/details',
+      controller: 'DetailsCtrl'
+    }).
+    when('/edit', {
+      templateUrl: 'partials/edit',
+      controller: 'EditCtrl'
     }).
     otherwise({
       redirectTo: '/'
