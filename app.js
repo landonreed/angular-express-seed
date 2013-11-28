@@ -9,8 +9,28 @@ var express = require('express'),
   http = require('http'),
   path = require('path');
 
+var GitHubApi = require('github')
 var app = module.exports = express();
 
+
+var github = new GitHubApi({
+    // required
+    version: "3.0.0",
+    // optional
+    // debug: true,
+    // protocol: "https",
+    // host: "github.my-GHE-enabled-company.com",
+    // timeout: 5000
+});
+github.user.getFollowingFromUser({
+    // optional:
+    // headers: {
+    //     "cookie": "blahblah"
+    // },
+    user: "landonreed"
+}, function(err, res) {
+    console.log(JSON.stringify(res));
+});
 
 /**
  * Configuration

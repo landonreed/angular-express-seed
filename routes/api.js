@@ -14,12 +14,12 @@ var data = {
 
 // GET
 
-exports.github = function (req, res) {
-	var Octokit = require('Octokit');
-	var gh = new Octokit({
-	  token: process.env.GITHUB_KEY
-	});
-}
+// exports.github = function (req, res) {
+// 	var Octokit = require('Octokit');
+// 	var gh = new Octokit({
+// 	  token: process.env.GITHUB_KEY
+// 	});
+// }
 
 exports.posts = function (req, res) {
   var posts = [];
