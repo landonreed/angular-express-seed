@@ -49,7 +49,7 @@ exports.name = function (req, res) {
 };
 
 exports.github = function (req, res) {
-  
+  var GitHubApi = require('github');
   res.json({
     github: 'fake github data'
   })

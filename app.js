@@ -10,10 +10,8 @@ var express = require('express'),
   path = require('path'),
   GitHubApi = require('github');
 
-var GitHubApi = require('github')
 var app = module.exports = express();
 
-<<<<<<< HEAD
 var github = new GitHubApi({
     // required
     version: "3.0.0"//,
@@ -21,7 +19,7 @@ var github = new GitHubApi({
     // debug: true,
     // protocol: "https",
     // host: "localhost:5000",
-=======
+
 
 var github = new GitHubApi({
     // required
@@ -30,7 +28,6 @@ var github = new GitHubApi({
     // debug: true,
     // protocol: "https",
     // host: "github.my-GHE-enabled-company.com",
->>>>>>> 99c4aae966398861ce0b7fb8ea4c0da5259fba5e
     // timeout: 5000
 });
 github.user.getFollowingFromUser({
