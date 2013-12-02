@@ -14,7 +14,16 @@ var data = {
 
 // GET
 
+<<<<<<< HEAD
 
+=======
+// exports.github = function (req, res) {
+// 	var Octokit = require('Octokit');
+// 	var gh = new Octokit({
+// 	  token: process.env.GITHUB_KEY
+// 	});
+// }
+>>>>>>> 99c4aae966398861ce0b7fb8ea4c0da5259fba5e
 
 exports.posts = function (req, res) {
   var posts = [];
