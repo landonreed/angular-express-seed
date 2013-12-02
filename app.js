@@ -7,11 +7,29 @@ var express = require('express'),
   routes = require('./routes'),
   api = require('./routes/api'),
   http = require('http'),
-  path = require('path');
+  path = require('path'),
+  GitHubApi = require('github');
 
 var app = module.exports = express();
 
-
+var github = new GitHubApi({
+    // required
+    version: "3.0.0"//,
+    // optional
+    // debug: true,
+    // protocol: "https",
+    // host: "localhost:5000",
+    // timeout: 5000
+});
+github.user.getFollowingFromUser({
+    // optional:
+    // headers: {
+    //     "cookie": "blahblah"
+    // },
+    user: "landonreed"
+}, function(err, res) {
+    console.log(JSON.stringify(res));
+});
 /**
  * Configuration
  */

@@ -15,6 +15,17 @@ angular.module('myApp.controllers', []).
     error(function (data, status, headers, config) {
       $scope.name = 'Error!'
     });
+    
+    $http({
+      method: 'GET',
+      url: '/api/github'
+    }).
+    success(function (data, status, headers, config) {
+      $scope.github = data.github;
+    }).
+    error(function (data, status, headers, config) {
+      $scope.github = 'Error!'
+    });
 
   }).
   controller('MyCtrl1', function ($scope) {

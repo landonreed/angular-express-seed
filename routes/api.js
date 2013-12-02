@@ -14,12 +14,7 @@ var data = {
 
 // GET
 
-exports.github = function (req, res) {
-	var Octokit = require('Octokit');
-	var gh = new Octokit({
-	  token: process.env.GITHUB_KEY
-	});
-}
+
 
 exports.posts = function (req, res) {
   var posts = [];
@@ -55,3 +50,16 @@ exports.name = function (req, res) {
   	name: 'Bob'
   });
 };
+
+exports.github = function (req, res) {
+  
+  res.json({
+    github: 'fake github data'
+  })
+}
+
+
+
+
+
+
